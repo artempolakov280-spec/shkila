@@ -10,4 +10,7 @@ while True:
     dota = input("Твой выбор - ")
     if dota =="1":
         print("ЗАДАЧА НОМЕР 1")
+        period = 8
+        Q0=2
+        Q1 = 0.15
 
