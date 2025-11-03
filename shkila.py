@@ -13,4 +13,18 @@ while True:
         period = 8
         Q0=2
         Q1 = 0.15
+        step = 5
+        print(f"Начальная мощность: {Q0} р/ч")
+        print(f"Период полураспада: {period} дней")
+        print(f"Ищем, когда мощность упадет до {Q1} р/ч")
+        print("\nРасчет по дням:")
+        formula = math.log(2)/period
+        days = 0
+        while True:
+            vova = Q0*math.exp(-formula*days)
+            print(f"Через{days} дней: {vova} р/ч")
+            if vova<=Q1:
+                break
+            days+=step
+        print(f"Ответ: понадобиться {days} дней")
 
