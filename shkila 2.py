@@ -8,8 +8,6 @@ def is_russian_letter(char):
 def input_positive_int(prompt):
     while True:
         s = input(prompt)
-
-        # пробуем преобразовать строку в целое число
         try:
             n = int(s)
         except ValueError:
@@ -43,14 +41,19 @@ def task2():
     print("\nИсходная строка:")
     print(line)
 
-    word_count = 0
-    in_word = False  # находимся ли сейчас внутри слова
 
     for ch in line:
-        if ch != ' ' and not in_word and not is_russian_letter(ch):
+        if ch != ' ' and not is_russian_letter(ch) :
             print(f"Ошибка: символ '{ch}' не является русской буквой или пробелом!")
-            break
-        elif ch == ' ' and in_word:
+            return
+    word_count = 0
+    in_word = False
+    for ch in line:
+        if ch != ' ':
+            if not in_word:
+                word_count +=1
+                in_word = True
+        else:
             in_word = False
 
     print("Количество слов в строке:", word_count, "\n")
@@ -77,7 +80,6 @@ def print_list(a, message):
     print()
 
 
-# ---------- Задание со списком ----------
 def task_list():
     n = input_positive_int("Введите размер списка n: ")
 
@@ -128,7 +130,6 @@ def task_list():
         print("Произведение элементов между минимальным и максимальным:", prod, "\n")
 
 
-# ---------- Главное меню ----------
 def main():
     while True:
         print("Меню:")
