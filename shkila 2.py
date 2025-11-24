@@ -4,7 +4,7 @@ def is_russian_letter(char):
     russian_upper = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
     return char in russian_lower or char in russian_upper
 
-# ---------- Вспомогательная функция ввода целого положительного числа ----------
+
 def input_positive_int(prompt):
     while True:
         s = input(prompt)
@@ -59,7 +59,6 @@ def task2():
     print("Количество слов в строке:", word_count, "\n")
 
 
-# ---------- Вспомогательные функции для списка ----------
 def generate_list(n):
     """Создаёт список из n случайных целых чисел от -10 до 10."""
     a = [0] * n
@@ -96,7 +95,6 @@ def task_list():
         i += 1
     print("Сумма отрицательных элементов списка:", sum_negative)
 
-    # 2) произведение элементов между максимальным и минимальным
     max_index = 0
     min_index = 0
 
@@ -111,7 +109,6 @@ def task_list():
     print("Максимальный элемент:", a[max_index], " (индекс", max_index, ")")
     print("Минимальный элемент:", a[min_index], " (индекс", min_index, ")")
 
-    # определяем границы от меньшего индекса к большему
     if max_index > min_index:
         left = min_index + 1
         right = max_index
